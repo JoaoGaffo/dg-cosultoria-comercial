@@ -1,0 +1,129 @@
+.sobre-hero {
+  padding: 9.5rem 0 4rem;
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-black) 130%);
+}
+
+.sobre-hero__inner h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 1rem 0 1.2rem;
+}
+
+.sobre-hero__lead {
+  max-width: 620px;
+  color: var(--color-text-soft);
+  font-size: 1.05rem;
+}
+
+.sobre-bio__grid {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.sobre-bio__media {
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  background: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-bio__logo{
+  border-radius: var(--radius-md);
+  width: auto;
+  height: 25rem;
+}
+.sobre-bio__logo:hover{
+  box-shadow: 0 0 20px rgb(201, 162, 59);
+}
+
+.sobre-bio__monogram {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  background: var(--gradient-gold-horizontal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sobre-bio__text h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  margin-bottom: 1.2rem;
+}
+
+.sobre-bio__text p {
+  margin-bottom: 1rem;
+  color: rgba(0, 27, 45, 0.78);
+  max-width: 750px;
+}
+
+.trajetoria__title {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  max-width: 660px;
+  margin: 1rem 0 2.6rem;
+}
+
+.trajetoria__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.trajetoria-card {
+  padding: 1.8rem;
+  border-radius: var(--radius-md);
+  background: rgba(232, 234, 248, 0.04);
+  border: 1px solid rgba(154, 120, 36, 0.18);
+}
+
+.trajetoria-card h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.02rem;
+  margin-bottom: 0.6rem;
+  color: var(--color-gold-start);
+}
+
+.trajetoria-card p {
+  font-size: 0.92rem;
+  color: var(--color-text-soft);
+}
+
+.missao__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.missao-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
+}
+
+.missao-card h3 {
+  margin-bottom: 0.8rem;
+}
+
+.missao-card p {
+  font-size: 0.95rem;
+  color: rgba(0, 27, 45, 0.75);
+}
+
+@media (max-width: 960px) {
+  .sobre-bio__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-bio__media {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .trajetoria__grid,
+  .missao__grid {
+    grid-template-columns: 1fr;
+  }
+}
