@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import '../styles/Header.css'
+import '../styles/header.css'
 import logo from '../assets/images/LogotipoHorizontalRemoveBG.png'
 
 const NAV_ITEMS = [
