@@ -1,0 +1,303 @@
+/* ============================================
+   LINKTREESTYLE.CSS — Identidade Visual Dayane Gaffo
+   ============================================ */
+
+:root {
+  --navy:          #001b2d;
+  --navy-light:    #07304b;
+  --gold-start:    #c9a23b;
+  --gold:          #9a7824;
+  --gold-end:      #433410;
+  --black:         #141519;
+  --lavender:      #e8eaf8;
+  --text-soft:     rgba(232, 234, 248, 0.72);
+  --gradient-gold: linear-gradient(135deg, #c9a23b 0%, #9a7824 50%, #433410 100%);
+  --font:          'Ancizar Sans', 'Segoe UI', sans-serif;
+  --ease:          cubic-bezier(0.4, 0, 0.2, 1);
+  --radius:        12px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1.25rem 4rem;
+  background-color: var(--navy);
+  background-image:
+    radial-gradient(ellipse 70% 45% at 80% 0%,   rgba(154, 120, 36, .18), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 10% 100%, rgba(13, 52, 233, .10),  transparent 60%);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  color: var(--lavender);
+}
+
+/* ============================================
+   WRAPPER
+   ============================================ */
+.lt {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ============================================
+   LOGO / AVATAR
+   ============================================ */
+.lt__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+
+.lt__logo img {
+  width: 10rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.lt__logo-fallback {
+  display: none;
+  font-size: 2.4rem;
+  line-height: 1;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+/* ============================================
+   NOME E TAGLINE
+   ============================================ */
+.lt__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--lavender);
+  margin: 0 0 0.3rem;
+  text-align: center;
+}
+
+.lt__sub {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-start);
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.lt__tagline {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  text-align: center;
+  max-width: 320px;
+  line-height: 1.55;
+  margin: 0 0 2rem;
+}
+
+/* ============================================
+   SEPARADOR COM LABEL
+   ============================================ */
+.lt__section-label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.4rem 0 0.75rem;
+}
+
+.lt__section-label span {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(232, 234, 248, .4);
+  white-space: nowrap;
+}
+
+.lt__section-label::before,
+.lt__section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(232, 234, 248, .1);
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+.lt__links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lt__links--top {
+  margin-bottom: 0;
+}
+
+.lt__link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--lavender);
+  background: rgba(232, 234, 248, .05);
+  border: 1px solid rgba(232, 234, 248, .1);
+  transition:
+    transform .22s var(--ease),
+    background .22s var(--ease),
+    border-color .22s var(--ease);
+}
+
+.lt__link:hover {
+  transform: translateY(-2px);
+  background: rgba(232, 234, 248, .09);
+  border-color: rgba(154, 120, 36, .45);
+}
+
+.lt__link--primary {
+  background: var(--gradient-gold);
+  border: none;
+  color: var(--black);
+}
+
+.lt__link--primary .lt__link-icon {
+  color: var(--black);
+}
+
+.lt__link--primary:hover {
+  background: var(--gradient-gold);
+  filter: brightness(1.1);
+  border: none;
+}
+
+.lt__link-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--gold-start);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lt__link-text {
+  flex: 1;
+}
+
+.lt__link-label {
+  display: block;
+  line-height: 1.2;
+}
+
+.lt__link-desc {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  margin-top: 0.15rem;
+  opacity: 0.65;
+}
+
+.lt__link--primary .lt__link-desc {
+  opacity: 0.75;
+}
+
+.lt__link-arrow {
+  flex-shrink: 0;
+  opacity: 0.5;
+  font-size: 0.9rem;
+  transition: transform .22s var(--ease), opacity .22s var(--ease);
+}
+
+.lt__link:hover .lt__link-arrow {
+  transform: translateX(3px);
+  opacity: 0.9;
+}
+
+/* ============================================
+   REDES SOCIAIS
+   ============================================ */
+.lt__socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.lt__social {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(232, 234, 248, .06);
+  border: 1px solid rgba(232, 234, 248, .12);
+  color: var(--text-soft);
+  text-decoration: none;
+  transition:
+    transform .22s var(--ease),
+    border-color .22s var(--ease),
+    color .22s var(--ease);
+}
+
+.lt__social:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold-start);
+  color: var(--gold-start);
+}
+
+.lt__social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ============================================
+   RODAPÉ
+   ============================================ */
+.lt__footer {
+  margin-top: 2.4rem;
+  font-size: 0.75rem;
+  color: rgba(232, 234, 248, .28);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================
+   RESPONSIVO
+   ============================================ */
+@media (max-width: 400px) {
+  body {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .lt__name {
+    font-size: 1.1rem;
+  }
+}
