@@ -95,3 +95,16 @@ const WA_NUMBER = '5513996805974';
     return el ? el.value.trim() : '';
   }
 })();
+
+/* ---------- escala dos mini-plays (previews dos projetos) ---------- */
+function fitPreviews() {
+  document.querySelectorAll('.preview-frame').forEach(frame => {
+    const iframe = frame.querySelector('iframe');
+    if (!iframe) return;
+    const scale = frame.clientWidth / 1440;
+    iframe.style.transform = `scale(${scale})`;
+  });
+}
+fitPreviews();
+window.addEventListener('load', fitPreviews);
+window.addEventListener('resize', fitPreviews);

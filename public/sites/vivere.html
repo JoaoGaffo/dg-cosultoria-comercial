@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vivere — Coaching &amp; Desenvolvimento</title>
+    <meta
+      name="description"
+      content="Desenvolvimento pessoal com propósito para uma vida mais leve e significativa. Conheça o método Vivere."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green: #3a4a3a;
+        --sage: #7a8f6a;
+        --terracotta: #c76d4a;
+        --sand: #e9d7c2;
+        --paper: #fbf9f6;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        background: var(--paper);
+        color: var(--green);
+        line-height: 1.75;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Marcellus", serif;
+        font-weight: 400;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      .back {
+        position: fixed;
+        top: 22px;
+        left: 22px;
+        z-index: 90;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        background: var(--paper);
+        border: 1px solid var(--sand);
+        padding: 10px 16px;
+        border-radius: 20px;
+        opacity: 0.85;
+        transition: 0.25s;
+      }
+      .back:hover {
+        opacity: 1;
+        background: var(--sand);
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+        background: rgba(251, 249, 246, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--sand);
+      }
+      nav .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 32px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Marcellus", serif;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--green);
+      }
+      .logo svg {
+        width: 30px;
+        height: 30px;
+      }
+      .navlinks {
+        display: flex;
+        gap: 30px;
+        font-size: 13.5px;
+      }
+      .navlinks a {
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+      .navlinks a:hover,
+      .navlinks a.active {
+        opacity: 1;
+        color: var(--terracotta);
+      }
+      .nav-btn {
+        padding: 10px 22px;
+        background: var(--terracotta);
+        color: var(--paper);
+        font-size: 12.5px;
+        letter-spacing: 0.06em;
+        border-radius: 20px;
+      }
+
+      /* hero */
+      header.hero {
+        padding: 110px 0 100px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 50% -10%,
+          rgba(122, 143, 106, 0.18),
+          transparent 60%
+        );
+      }
+      .eyebrow {
+        font-size: 11.5px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-size: clamp(38px, 5.6vw, 60px);
+        max-width: 760px;
+        margin: 0 auto 24px;
+        line-height: 1.18;
+        position: relative;
+      }
+      .hero p.lead {
+        max-width: 480px;
+        margin: 0 auto 40px;
+        font-size: 17px;
+        opacity: 0.8;
+        position: relative;
+      }
+      .cta-row {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .btn {
+        display: inline-block;
+        padding: 15px 32px;
+        font-size: 12.5px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-radius: 30px;
+        border: 1px solid var(--green);
+        transition: 0.3s;
+      }
+      .btn.primary {
+        background: var(--terracotta);
+        color: var(--paper);
+        border-color: var(--terracotta);
+      }
+      .btn.primary:hover {
+        background: var(--green);
+        border-color: var(--green);
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--green);
+      }
+      .btn.ghost:hover {
+        background: var(--green);
+        color: var(--paper);
+      }
+      .tree {
+        width: 220px;
+        margin: 44px auto 0;
+        position: relative;
+      }
+
+      /* about */
+      .sobre {
+        padding: 100px 0;
+        background: var(--sand);
+      }
+      .sobre .row {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .sobre h2 {
+        font-size: clamp(28px, 3.2vw, 38px);
+        margin: 12px 0 20px;
+      }
+      .sobre p {
+        opacity: 0.85;
+        font-size: 15.5px;
+        margin-bottom: 14px;
+        max-width: 480px;
+      }
+      .roots {
+        position: relative;
+      }
+      .roots svg {
+        width: 100%;
+        height: auto;
+      }
+      .stats {
+        display: flex;
+        gap: 36px;
+        margin-top: 36px;
+        flex-wrap: wrap;
+      }
+      .stat b {
+        display: block;
+        font-family: "Marcellus", serif;
+        font-size: 30px;
+        color: var(--terracotta);
+      }
+      .stat span {
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        opacity: 0.7;
+        text-transform: uppercase;
+      }
+
+      /* servicos */
+      .servicos {
+        padding: 110px 0;
+      }
+      .head-block {
+        max-width: 560px;
+        margin: 0 auto 60px;
+        text-align: center;
+      }
+      .head-block h2 {
+        font-size: clamp(28px, 3.2vw, 38px);
+        margin-top: 10px;
+      }
+      .head-block p {
+        opacity: 0.75;
+        margin-top: 14px;
+        font-size: 15.5px;
+      }
+      .serv-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      .serv-card {
+        background: var(--paper);
+        border: 1px solid var(--sand);
+        border-radius: 16px;
+        padding: 36px 30px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .serv-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(58, 74, 58, 0.1);
+      }
+      .serv-card svg {
+        width: 34px;
+        height: 34px;
+        color: var(--terracotta);
+        margin-bottom: 20px;
+      }
+      .serv-card h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+      }
+      .serv-card p {
+        font-size: 14px;
+        opacity: 0.75;
+      }
+
+      /* testimonials */
+      .testi {
+        background: var(--green);
+        color: var(--paper);
+        padding: 110px 0;
+        text-align: center;
+      }
+      .testi .eyebrow {
+        color: var(--sand);
+      }
+      .testi h2 {
+        color: var(--paper);
+        font-size: clamp(28px, 3.2vw, 38px);
+        margin-bottom: 56px;
+      }
+      .carousel {
+        position: relative;
+        max-width: 700px;
+        margin: 0 auto;
+        min-height: 190px;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .slide.active {
+        position: relative;
+        opacity: 1;
+      }
+      .slide q {
+        font-family: "Marcellus", serif;
+        font-style: italic;
+        font-size: 22px;
+        display: block;
+        margin-bottom: 20px;
+      }
+      .slide .who {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--sand);
+      }
+      .dots {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 36px;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: rgba(251, 249, 246, 0.35);
+        cursor: pointer;
+        border: none;
+        transition: background 0.3s;
+      }
+      .dot.active {
+        background: var(--paper);
+      }
+
+      /* blog */
+      .blog {
+        padding: 110px 0;
+        background: var(--paper);
+      }
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      .post {
+        background: var(--sand);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+      .post:hover {
+        transform: translateY(-4px);
+      }
+      .post-img {
+        height: 150px;
+        background: linear-gradient(135deg, var(--sage), var(--terracotta));
+      }
+      .post-body {
+        padding: 24px;
+      }
+      .post-tag {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        margin-bottom: 10px;
+      }
+      .post h3 {
+        font-size: 17px;
+        margin-bottom: 8px;
+      }
+      .post p {
+        font-size: 13.5px;
+        opacity: 0.75;
+      }
+
+      /* booking */
+      .booking {
+        padding: 110px 0;
+        background: var(--sand);
+      }
+      .booking .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .booking h2 {
+        font-size: clamp(26px, 3vw, 34px);
+        margin: 10px 0 16px;
+      }
+      .booking p {
+        opacity: 0.8;
+        font-size: 15px;
+        max-width: 420px;
+      }
+      .form-card {
+        background: var(--paper);
+        padding: 36px;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(58, 74, 58, 0.08);
+      }
+      .form-card input,
+      .form-card select {
+        width: 100%;
+        padding: 13px 16px;
+        border: 1px solid var(--sand);
+        border-radius: 30px;
+        font-family: inherit;
+        font-size: 14px;
+        margin-bottom: 14px;
+        background: var(--paper);
+      }
+      .form-card .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* footer */
+      footer {
+        background: var(--green);
+        color: var(--paper);
+        padding: 60px 0 30px;
+      }
+      .foot-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+        padding-bottom: 36px;
+        border-bottom: 1px solid rgba(251, 249, 246, 0.15);
+      }
+      .foot-brand p {
+        opacity: 0.6;
+        font-size: 13px;
+        max-width: 280px;
+        margin-top: 14px;
+      }
+      .foot-col h4 {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        opacity: 0.75;
+      }
+      .foot-col a {
+        display: block;
+        font-size: 13.5px;
+        opacity: 0.7;
+        margin-bottom: 10px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11.5px;
+        opacity: 0.55;
+        margin-top: 16px;
+      }
+      .badge svg {
+        width: 14px;
+        height: 14px;
+      }
+      .bottom {
+        padding-top: 22px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        opacity: 0.5;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .wa {
+        position: fixed;
+        bottom: 26px;
+        right: 26px;
+        z-index: 90;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: var(--terracotta);
+        color: var(--paper);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 26px rgba(199, 109, 74, 0.45);
+        transition: transform 0.3s;
+      }
+      .wa:hover {
+        transform: scale(1.08);
+      }
+      .chat-bubble {
+        position: fixed;
+        bottom: 98px;
+        right: 26px;
+        z-index: 89;
+        background: var(--paper);
+        border: 1px solid var(--sand);
+        padding: 12px 16px;
+        border-radius: 14px 14px 2px 14px;
+        font-size: 12.5px;
+        max-width: 210px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        animation: pop 0.5s ease 0.8s both;
+      }
+      @keyframes pop {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .sobre .row,
+        .booking .row {
+          grid-template-columns: 1fr;
+        }
+        .serv-grid,
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+        .navlinks {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="back">← Portfólio</a>
+
+    <nav>
+      <div class="row">
+        <div class="logo">
+          <svg
+            viewBox="0 0 60 60"
+            fill="none"
+            stroke="#3A4A3A"
+            stroke-width="1.4"
+          >
+            <circle cx="30" cy="30" r="26" stroke="#C76D4A" />
+            <path
+              d="M30 42 V26 M30 26 C24 22 20 18 20 14 M30 26 C36 22 40 18 40 14 M30 32 C25 29 22 26 22 22 M30 32 C35 29 38 26 38 22"
+            />
+          </svg>
+          Vivere
+        </div>
+        <div class="navlinks">
+          <a href="#home" class="active">Home</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#blog">Blog</a>
+        </div>
+        <a class="nav-btn" href="#contato">Agendar sessão</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">Coaching &amp; Desenvolvimento</div>
+        <h1>
+          Desenvolvimento pessoal com propósito, para uma vida mais leve e
+          significativa.
+        </h1>
+        <p class="lead">
+          O método Vivere ajuda você a reconectar decisões do dia a dia com o
+          que realmente importa — com escuta ativa e ferramentas práticas, não
+          fórmulas prontas.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contato">Agendar sessão gratuita</a>
+          <a class="btn ghost" href="#sobre">Conhecer o método</a>
+        </div>
+        <div class="tree">
+          <svg viewBox="0 0 200 220" fill="none">
+            <path
+              d="M100 210 L100 130"
+              stroke="#C76D4A"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M100 170 C 70 150, 55 120, 60 90"
+              stroke="#7A8F6A"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M100 150 C 130 130, 145 100, 140 70"
+              stroke="#7A8F6A"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M100 130 C 100 100, 100 70, 100 40"
+              stroke="#7A8F6A"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <g fill="#3A4A3A" opacity=".85">
+              <ellipse
+                cx="60"
+                cy="88"
+                rx="10"
+                ry="5"
+                transform="rotate(-30 60 88)"
+              />
+              <ellipse
+                cx="140"
+                cy="68"
+                rx="10"
+                ry="5"
+                transform="rotate(30 140 68)"
+              />
+              <ellipse cx="100" cy="38" rx="10" ry="5" />
+              <ellipse
+                cx="76"
+                cy="120"
+                rx="9"
+                ry="4.5"
+                transform="rotate(-20 76 120)"
+              />
+              <ellipse
+                cx="124"
+                cy="102"
+                rx="9"
+                ry="4.5"
+                transform="rotate(20 124 102)"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <section class="sobre" id="sobre">
+      <div class="wrap row">
+        <div class="roots">
+          <svg viewBox="0 0 260 260" fill="none">
+            <circle
+              cx="130"
+              cy="130"
+              r="100"
+              stroke="#C76D4A"
+              stroke-width="1.4"
+            />
+            <path
+              d="M130 190 V110"
+              stroke="#C76D4A"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M130 150 C 105 140, 90 120, 92 100"
+              stroke="#7A8F6A"
+              stroke-width="2"
+            />
+            <path
+              d="M130 140 C 155 130, 168 110, 165 90"
+              stroke="#7A8F6A"
+              stroke-width="2"
+            />
+            <path
+              d="M130 110 C 130 95, 130 80, 130 65"
+              stroke="#7A8F6A"
+              stroke-width="2"
+            />
+            <g fill="#3A4A3A">
+              <ellipse
+                cx="92"
+                cy="98"
+                rx="9"
+                ry="4.5"
+                transform="rotate(-30 92 98)"
+              />
+              <ellipse
+                cx="165"
+                cy="88"
+                rx="9"
+                ry="4.5"
+                transform="rotate(30 165 88)"
+              />
+              <ellipse cx="130" cy="63" rx="9" ry="4.5" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <div class="eyebrow">Sobre a Vivere</div>
+          <h2>
+            Nascemos de uma pergunta simples: você está vivendo ou apenas
+            cumprindo tarefas?
+          </h2>
+          <p>
+            A Vivere existe para quem chegou ao topo de uma escada e percebeu
+            que era a escada errada. Trabalhamos com coaching individual e
+            programas de desenvolvimento para profissionais em transição,
+            líderes exaustos e pessoas prontas para recomeçar com intenção.
+          </p>
+          <p>
+            Nosso método combina escuta profunda, ferramentas de
+            autoconhecimento e planos de ação realistas — nada de fórmulas
+            motivacionais vazias.
+          </p>
+          <div class="stats">
+            <div class="stat"><b>420+</b><span>Vidas acompanhadas</span></div>
+            <div class="stat">
+              <b>9 anos</b><span>De prática dedicada</span>
+            </div>
+            <div class="stat"><b>96%</b><span>Renovam o programa</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="servicos" id="servicos">
+      <div class="wrap">
+        <div class="head-block">
+          <div class="eyebrow">Serviços</div>
+          <h2>Um caminho para cada momento de vida</h2>
+          <p>
+            Programas estruturados com objetivo claro — buscados por quem digita
+            "coaching de carreira" ou "desenvolvimento pessoal" e quer encontrar
+            algo sério.
+          </p>
+        </div>
+        <div class="serv-grid">
+          <div class="serv-card">
+            <svg
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+            >
+              <path d="M13 2 L4 14h7l-1 8 9-12h-7l1-8z" />
+            </svg>
+            <h3>Coaching de Carreira</h3>
+            <p>
+              Para quem precisa decidir o próximo passo profissional com
+              clareza, não no impulso.
+            </p>
+          </div>
+          <div class="serv-card">
+            <svg
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg>
+            <h3>Gestão do Tempo &amp; Energia</h3>
+            <p>
+              Reorganize a rotina em torno do que gera resultado e bem-estar,
+              não só ocupação.
+            </p>
+          </div>
+          <div class="serv-card">
+            <svg
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+            >
+              <path
+                d="M12 21c-4-3-8-6-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 5-4 8-8 11z"
+              />
+            </svg>
+            <h3>Propósito &amp; Sentido</h3>
+            <p>
+              Programa de imersão para reconectar decisões diárias com valores
+              de longo prazo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testi" id="depoimentos">
+      <div class="wrap">
+        <div class="eyebrow">Depoimentos</div>
+        <h2>Histórias de quem viveu a mudança</h2>
+        <div class="carousel" id="carousel">
+          <div class="slide active">
+            <q
+              >Em três meses eu tomei a decisão de carreira que estava adiando
+              havia dois anos. A Vivere me deu clareza, não pressão.</q
+            >
+            <div class="who">Bianca S. — Gerente de produto</div>
+          </div>
+          <div class="slide">
+            <q
+              >Não era terapia, não era motivação vazia. Era um método que
+              realmente me fez agir diferente.</q
+            >
+            <div class="who">Rafael N. — Empreendedor</div>
+          </div>
+          <div class="slide">
+            <q
+              >Aprendi a dizer não sem culpa. Isso mudou minha relação com o
+              trabalho e com a família.</q
+            >
+            <div class="who">Patrícia L. — Diretora de RH</div>
+          </div>
+        </div>
+        <div class="dots" id="dots"></div>
+      </div>
+    </section>
+
+    <section class="blog" id="blog">
+      <div class="wrap">
+        <div class="head-block">
+          <div class="eyebrow">Blog</div>
+          <h2>Reflexões para quem está em transição</h2>
+        </div>
+        <div class="blog-grid">
+          <a class="post" href="#">
+            <div class="post-img"></div>
+            <div class="post-body">
+              <div class="post-tag">Carreira</div>
+              <h3>Como saber se é hora de mudar de emprego</h3>
+              <p>
+                Três perguntas para diferenciar cansaço passageiro de um chamado
+                real por mudança.
+              </p>
+            </div>
+          </a>
+          <a class="post" href="#">
+            <div class="post-img"></div>
+            <div class="post-body">
+              <div class="post-tag">Rotina</div>
+              <h3>O mito da produtividade a qualquer custo</h3>
+              <p>
+                Por que fazer menos, com mais intenção, costuma gerar resultados
+                melhores.
+              </p>
+            </div>
+          </a>
+          <a class="post" href="#">
+            <div class="post-img"></div>
+            <div class="post-body">
+              <div class="post-tag">Propósito</div>
+              <h3>Encontrando sentido depois dos 40</h3>
+              <p>
+                Um roteiro simples para reavaliar prioridades na segunda metade
+                da vida profissional.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="contato">
+      <div class="wrap row">
+        <div>
+          <div class="eyebrow">Agendamento online</div>
+          <h2>Agende sua primeira sessão</h2>
+          <p>
+            Uma conversa inicial gratuita de 30 minutos para entender seu
+            momento e ver se o método Vivere faz sentido para você.
+          </p>
+        </div>
+        <div class="form-card">
+          <input type="text" placeholder="Nome completo" />
+          <input type="text" placeholder="E-mail" />
+          <select>
+            <option>Prefiro sessão online</option>
+            <option>Prefiro sessão presencial</option>
+          </select>
+          <select>
+            <option>Manhã (9h–12h)</option>
+            <option>Tarde (14h–18h)</option>
+            <option>Noite (19h–21h)</option>
+          </select>
+          <button class="btn primary" type="button" onclick="confirmBooking()">
+            Confirmar sessão gratuita
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot-row">
+          <div class="foot-brand">
+            <div class="logo" style="color: #fbf9f6">Vivere</div>
+            <p>
+              Desenvolvimento pessoal com propósito para uma vida mais leve e
+              significativa.
+            </p>
+            <div class="badge">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <rect x="4" y="10" width="16" height="10" rx="1" />
+                <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+              </svg>
+              vivere.com.br — domínio &amp; hospedagem com SSL
+            </div>
+          </div>
+          <div class="foot-col">
+            <h4>Navegação</h4>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#blog">Blog</a>
+          </div>
+          <div class="foot-col">
+            <h4>Contato</h4>
+            <a href="https://wa.me/5511977776666" target="_blank" rel="noopener"
+              >(11) 97777-6666</a
+            >
+            <a href="mailto:ola@vivere.com.br">ola@vivere.com.br</a>
+            <a href="#">Atendimento online e presencial</a>
+          </div>
+        </div>
+        <div class="bottom">
+          <span>© 2026 Vivere Coaching &amp; Desenvolvimento</span>
+          <span>Projeto conceito por DG Consultoria Comercial</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="chat-bubble" id="chatBubble">
+      🌿 Oi! Quer agendar sua sessão gratuita?
+    </div>
+    <a
+      class="wa"
+      href="https://wa.me/5511977776666"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm5.8 14.05c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.3-1.64-.6-2.88-1.24-4.76-4.15-4.9-4.35-.14-.2-1.17-1.56-1.17-2.97 0-1.42.74-2.11 1-2.4.26-.3.58-.37.77-.37.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.15.12.32.02.52-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.28.75 1.24 1.62 2.01 1.11.99 2.04 1.3 2.32 1.44.28.14.44.12.6-.07.17-.19.72-.84.91-1.13.19-.28.38-.24.64-.14.26.1 1.66.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const dotsWrap = document.getElementById("dots");
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.className = "dot" + (i === 0 ? " active" : "");
+        b.addEventListener("click", () => go(i));
+        dotsWrap.appendChild(b);
+      });
+      const dots = document.querySelectorAll(".dot");
+      let idx = 0,
+        timer;
+      function go(i) {
+        slides[idx].classList.remove("active");
+        dots[idx].classList.remove("active");
+        idx = i;
+        slides[idx].classList.add("active");
+        dots[idx].classList.add("active");
+      }
+      function next() {
+        go((idx + 1) % slides.length);
+      }
+      function start() {
+        timer = setInterval(next, 5000);
+      }
+      start();
+      document
+        .getElementById("carousel")
+        .addEventListener("mouseenter", () => clearInterval(timer));
+      document.getElementById("carousel").addEventListener("mouseleave", start);
+
+      function confirmBooking() {
+        alert(
+          "Sessão agendada! Você receberá a confirmação por e-mail e WhatsApp.",
+        );
+      }
+      setTimeout(() => {
+        document.getElementById("chatBubble").style.display = "none";
+      }, 6000);
+
+      // active nav link on scroll
+      const sections = document.querySelectorAll("section, header");
+      const links = document.querySelectorAll(".navlinks a");
+      window.addEventListener("scroll", () => {
+        let cur = "";
+        sections.forEach((s) => {
+          if (scrollY >= s.offsetTop - 120) cur = s.id;
+        });
+        links.forEach((l) => {
+          l.classList.toggle("active", l.getAttribute("href") === "#" + cur);
+        });
+      });
+    </script>
+  </body>
+</html>
