@@ -1,94 +1,168 @@
 .sobre-hero {
   padding: 9.5rem 0 4rem;
-  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-black) 130%);
+  background: linear-gradient(
+    180deg,
+    var(--color-navy) 0%,
+    var(--color-black) 140%
+  );
 }
-
 .sobre-hero__inner h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin: 1rem 0 1.2rem;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  margin: 1rem 0 0.4rem;
 }
-
+.sobre-hero__cargo {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-start);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
 .sobre-hero__lead {
-  max-width: 620px;
+  max-width: 640px;
   color: var(--color-text-soft);
   font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 .sobre-bio__grid {
   display: grid;
-  grid-template-columns: 0.6fr 1.4fr;
-  gap: 3rem;
-  align-items: center;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 3.5rem;
+  align-items: start;
 }
-
-.sobre-bio__media {
-  aspect-ratio: 1;
+.sobre-bio__foto {
   border-radius: var(--radius-md);
-  background: var(--color-navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
-
-.sobre-bio__logo{
+.sobre-bio__foto img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   border-radius: var(--radius-md);
-  width: auto;
-  height: 25rem;
 }
-.sobre-bio__logo:hover{
-  box-shadow: 0 0 20px rgb(201, 162, 59);
-}
-
-.sobre-bio__monogram {
-  font-family: var(--font-display);
-  font-size: 6rem;
-  background: var(--gradient-gold-horizontal);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .sobre-bio__text h2 {
   font-size: clamp(1.5rem, 2.6vw, 2rem);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
-
 .sobre-bio__text p {
+  color: rgba(0, 27, 45, 0.75);
   margin-bottom: 1rem;
-  color: rgba(0, 27, 45, 0.78);
-  max-width: 750px;
+  max-width: 640px;
+}
+.sobre-bio__quote {
+  margin: 1.6rem 0;
+  padding: 1.2rem 1.6rem;
+  border-left: 3px solid var(--color-gold);
+  background: rgba(0, 27, 45, 0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--color-navy);
 }
 
 .trajetoria__title {
   font-size: clamp(1.5rem, 2.6vw, 2rem);
   max-width: 660px;
-  margin: 1rem 0 2.6rem;
+  margin: 1rem 0 2.4rem;
 }
-
 .trajetoria__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.4rem;
+  margin-bottom: 2rem;
 }
-
 .trajetoria-card {
   padding: 1.8rem;
   border-radius: var(--radius-md);
   background: rgba(232, 234, 248, 0.04);
   border: 1px solid rgba(154, 120, 36, 0.18);
 }
-
 .trajetoria-card h3 {
-  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 700;
-  font-size: 1.02rem;
-  margin-bottom: 0.6rem;
   color: var(--color-gold-start);
+  margin-bottom: 0.6rem;
 }
-
 .trajetoria-card p {
   font-size: 0.92rem;
   color: var(--color-text-soft);
+}
+.trajetoria__metodo-destaque {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--gradient-gold-horizontal);
+  border-radius: var(--radius-md);
+  padding: 2rem 2.4rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.trajetoria__metodo-destaque .eyebrow {
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+}
+.trajetoria__metodo-destaque p {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 0.95rem;
+  max-width: 540px;
+}
+.trajetoria__metodo-destaque .btn {
+  background: var(--color-black);
+  color: var(--color-gold-start);
+  white-space: nowrap;
+}
+
+.autoria__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 4rem;
+  align-items: center;
+}
+.autoria__grid h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  margin: 1rem 0 1.2rem;
+}
+.autoria__grid p {
+  color: rgba(0, 27, 45, 0.75);
+  max-width: 580px;
+  margin-bottom: 1rem;
+}
+.autoria__cta {
+  margin-top: 0.6rem;
+  display: inline-flex;
+}
+.autoria__capa {
+  display: flex;
+  justify-content: center;
+}
+.autoria__capa-placeholder {
+  width: 180px;
+  height: 250px;
+  background: var(--color-navy);
+  border: 1px solid rgba(154, 120, 36, 0.3);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.autoria__capa-placeholder span {
+  font-size: 3rem;
+  font-style: italic;
+  font-family: Georgia, serif;
+  background: var(--gradient-gold-horizontal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.autoria__capa-placeholder p {
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(0, 27, 45, 0.4);
+  font-weight: 600;
 }
 
 .missao__grid {
@@ -96,34 +170,59 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem;
 }
-
 .missao-card {
-  background: var(--color-white);
-  border-radius: var(--radius-md);
   padding: 1.8rem;
+  border-radius: var(--radius-md);
+  background: rgba(232, 234, 248, 0.04);
+  border: 1px solid rgba(154, 120, 36, 0.15);
 }
-
-.missao-card h3 {
+.missao-card .eyebrow {
   margin-bottom: 0.8rem;
 }
-
 .missao-card p {
   font-size: 0.95rem;
-  color: rgba(0, 27, 45, 0.75);
+  color: var(--color-text-soft);
 }
 
-@media (max-width: 960px) {
-  .sobre-bio__grid {
+.manifesto-sobre {
+  background: var(--color-black);
+  padding: 5rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(154, 120, 36, 0.15);
+  border-bottom: 1px solid rgba(154, 120, 36, 0.15);
+}
+.manifesto-sobre blockquote {
+  margin: 0 0 1rem;
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  font-style: italic;
+  color: var(--color-lavender);
+  line-height: 1.45;
+}
+.manifesto-sobre blockquote strong {
+  background: var(--gradient-gold-horizontal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.manifesto-sobre cite {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-start);
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .sobre-bio__grid,
+  .autoria__grid {
     grid-template-columns: 1fr;
   }
-
-  .sobre-bio__media {
-    max-width: 220px;
-    margin: 0 auto;
-  }
-
   .trajetoria__grid,
   .missao__grid {
     grid-template-columns: 1fr;
+  }
+  .trajetoria__metodo-destaque {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

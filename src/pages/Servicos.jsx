@@ -128,7 +128,7 @@ const PRODUTOS = [
     execucao:
       "Reunião via call com o responsável pelo comercial ou com a equipe.",
     resultado:
-      "Organização alta do processo comercial, com aumento estimado de +50% a +150% na conversão em curto prazo (30–60 dias).",
+      "Mais visibilidade e controle sobre a operação comercial, com indicadores que apoiam decisões mais rápidas e precisas.",
   },
 ];
 
@@ -148,14 +148,12 @@ const PLANOS = [
   {
     id: "PL5",
     nome: "Plano Avançado",
-    produtos: ["PR1", "PR3", "PR4", "PR5", "PR6"],
-    extra: true,
+    produtos: ["PR1", "PR3", "PR4", "PR5", "PR6", "PR7"],
   },
   {
     id: "PL6",
     nome: "Plano Master",
-    produtos: ["PR1", "PR2", "PR4", "PR5", "PR6"],
-    extra: true,
+    produtos: ["PR1", "PR2", "PR4", "PR5", "PR6", "PR7"],
   },
 ];
 
@@ -165,7 +163,6 @@ function nomeProduto(id) {
 
 export default function Servicos() {
   const [aberto, setAberto] = useState(null);
-
   function toggle(id) {
     setAberto((atual) => (atual === id ? null : id));
   }
@@ -174,7 +171,7 @@ export default function Servicos() {
     <>
       <section className="servicos-hero">
         <div className="container">
-          <p className="eyebrow">Serviços</p>
+          <p className="eyebrow">Soluções</p>
           <h1>
             Consultoria comercial B2B que{" "}
             <span className="gold-text">estrutura, organiza</span> e escala suas
@@ -190,13 +187,12 @@ export default function Servicos() {
         </div>
       </section>
 
-      {/* DIAGNÓSTICO GRATUITO */}
-      <section className="section-light diagnostico-banner">
+      <section className="diagnostico-banner">
         <div className="container diagnostico-banner__inner">
-          <div className="diagnostico-banner-text">
+          <div>
             <h2>
-              O primeiro passo é um diagnóstico
-              <br /> comercial <span className="gold-text">gratuito</span>.
+              O primeiro passo é um diagnóstico comercial{" "}
+              <span className="gold-text">gratuito</span>.
             </h2>
             <p>
               Antes de qualquer recomendação, a DG analisa de perto a sua
@@ -210,7 +206,6 @@ export default function Servicos() {
         </div>
       </section>
 
-      {/* PRODUTOS — ACCORDION */}
       <section className="section produtos">
         <div className="container">
           <p className="eyebrow">Nossos produtos</p>
@@ -220,7 +215,6 @@ export default function Servicos() {
           <p className="produtos__subtitle">
             Clique em um produto para ver o que está incluído.
           </p>
-
           <div className="produtos__list">
             {PRODUTOS.map((produto) => {
               const estaAberto = aberto === produto.id;
@@ -246,7 +240,6 @@ export default function Servicos() {
                       {estaAberto ? "–" : "+"}
                     </span>
                   </button>
-
                   <div className="produto-card__body">
                     <div className="produto-card__body-inner">
                       <div className="produto-card__grid">
@@ -286,7 +279,6 @@ export default function Servicos() {
         </div>
       </section>
 
-      {/* PLANOS */}
       <section className="section section-light planos">
         <div className="container">
           <p className="eyebrow">Planos</p>
@@ -297,7 +289,6 @@ export default function Servicos() {
             Cada plano combina diferentes produtos da consultoria, pensados para
             o momento da sua operação comercial.
           </p>
-
           <div className="planos__grid">
             {PLANOS.map((plano) => (
               <article className="plano-card" key={plano.id}>
@@ -307,11 +298,6 @@ export default function Servicos() {
                   {plano.produtos.map((produtoId) => (
                     <li key={produtoId}>{nomeProduto(produtoId)}</li>
                   ))}
-                  {plano.extra && (
-                    <li className="plano-card__produtos--extra">
-                      + produto adicional
-                    </li>
-                  )}
                 </ul>
                 <NavLink
                   to="/contato"
