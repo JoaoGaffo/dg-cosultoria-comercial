@@ -27,13 +27,13 @@ const ECOSSISTEMA = [
     titulo: "Consultoria",
     descricao:
       "Diagnóstico, estruturação e implementação do Método DG dentro da operação comercial.",
-    link: "/solucoes",
+    link: "/servicos",
   },
   {
     titulo: "Treinamentos",
     descricao:
       "Desenvolvimento de vendedores, closers, representantes e equipes comerciais.",
-    link: "/solucoes",
+    link: "/servicos",
   },
   {
     titulo: "Livro",
@@ -204,7 +204,7 @@ export default function Home() {
                 acompanhada e aperfeiçoada.
               </p>
               <NavLink
-                to="/solucoes"
+                to="/servicos"
                 className="btn btn-outline paraquem-card__cta"
               >
                 Ver soluções
@@ -219,7 +219,7 @@ export default function Home() {
                 profissionalismo.
               </p>
               <NavLink
-                to="/solucoes"
+                to="/servicos"
                 className="btn btn-outline paraquem-card__cta"
               >
                 Ver treinamentos
@@ -232,8 +232,8 @@ export default function Home() {
       {/* DAYANE — AUTORIDADE */}
       <section className="section autoridade">
         <div className="container autoridade__grid">
-          <div className="autoridade__foto-wrap" aria-hidden="true">
-            <div className="autoridade__foto-bg" />
+          <div className="autoridade__foto-wrap">
+            <img src={dayaneImage} alt="Dayane Gaffo" />
           </div>
           <div>
             <p className="eyebrow">Dayane Gaffo</p>
@@ -261,13 +261,7 @@ export default function Home() {
       <section className="section-light livro-home">
         <div className="container livro-home__inner">
           <div className="livro-home__cover" aria-hidden="true">
-            <div className="livro-home__cover-placeholder">
-              <p>
-                Arquitetura
-                <br />
-                Comercial
-              </p>
-            </div>
+            <img src={livroCapa} alt="Capa do livro DG — Arquitetura Comercial" />
           </div>
           <div className="livro-home__text">
             <p className="eyebrow">Livro</p>

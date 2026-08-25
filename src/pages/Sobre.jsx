@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../styles/Sobre.css";
 import DayaneImage from "../assets/images/DayaneGaffoSentada.png";
+import livroCapa from "../assets/images/capa-livro.png";
 
 const TRAJETORIA = [
   {
@@ -144,14 +145,7 @@ export default function Sobre() {
             </NavLink>
           </div>
           <div className="autoria__capa">
-            <div className="autoria__capa-placeholder">
-              <span>DG</span>
-              <p>
-                Arquitetura
-                <br />
-                Comercial
-              </p>
-            </div>
+            <img src={livroCapa} alt="Capa do livro DG — Arquitetura Comercial" />
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../styles/Livro.css";
+import livroCapa from "../assets/images/capa-livro.png";
 
 const CAPITULOS = [
   {
@@ -89,15 +90,7 @@ export default function Livro() {
             </a>
           </div>
           <div className="livro-hero__cover">
-            <div className="livro-cover-placeholder">
-              <span>DG</span>
-              <p>
-                Arquitetura
-                <br />
-                Comercial
-              </p>
-              <small>Dayane Gaffo</small>
-            </div>
+            <img src={livroCapa} alt="Capa do livro DG — Arquitetura Comercial" />
           </div>
         </div>
       </section>

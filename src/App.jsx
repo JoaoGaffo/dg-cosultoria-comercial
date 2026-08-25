@@ -7,6 +7,8 @@ import Sobre from './pages/Sobre.jsx'
 import Servicos from './pages/Servicos.jsx'
 import Portfolio from './pages/Porfolio.jsx'
 import Contato from './pages/Contato.jsx'
+import MetodoDG from './pages/MetodoDG.jsx'
+import Livro from './pages/Livro.jsx'
 export default function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,8 @@ export default function App() {
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/metodo-dg" element={<MetodoDG />} />
+          <Route path="/livro" element={<Livro />} />
         </Routes>
       </main>
       <Footer />

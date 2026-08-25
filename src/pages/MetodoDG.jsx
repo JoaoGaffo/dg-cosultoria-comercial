@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import './MetodoDG.css'
+import '../styles/MetodoDG.css'
 
 const PILARES = [
   { num: '01', titulo: 'Diagnóstico', texto: 'Antes de propor qualquer solução, é preciso compreender o cenário. O Método DG começa pelo diagnóstico da operação, do profissional, do processo e do cliente. É aqui que identificamos gargalos, perdas, comportamentos, oportunidades e os pontos que precisam ser estruturados antes de qualquer intervenção.', tag: 'Diagnosticar antes de prescrever.' },
@@ -10,8 +10,8 @@ const PILARES = [
 ]
 
 const APLICACOES = [
-  { titulo: 'Consultoria Comercial', desc: 'Aplicação da metodologia na análise e estruturação de operações comerciais.', link: '/solucoes' },
-  { titulo: 'Treinamentos e Formação', desc: 'Desenvolvimento de vendedores, closers, representantes, gestores e equipes.', link: '/solucoes' },
+  { titulo: 'Consultoria Comercial', desc: 'Aplicação da metodologia na análise e estruturação de operações comerciais.', link: '/servicos' },
+  { titulo: 'Treinamentos e Formação', desc: 'Desenvolvimento de vendedores, closers, representantes, gestores e equipes.', link: '/servicos' },
   { titulo: 'Playbook Método DG', desc: 'Organização prática dos processos, frameworks, perguntas, objeções e ferramentas comerciais.', link: '/contato' },
   { titulo: 'DG Blueprint', desc: 'Estrutura orientada para que o profissional construa seu próprio script e processo comercial.', link: '/contato' },
   { titulo: 'Livro DG — Arquitetura Comercial', desc: 'A consolidação conceitual, estratégica e prática da metodologia desenvolvida por Dayane Gaffo.', link: '/livro' },
@@ -121,7 +121,7 @@ export default function MetodoDG() {
           <h2>Conheça como o Método DG pode ser aplicado à realidade da sua operação comercial.</h2>
           <div className="cta-metodo__btns">
             <NavLink to="/contato" className="btn btn-primary">Agendar diagnóstico gratuito</NavLink>
-            <NavLink to="/solucoes" className="btn btn-outline">Ver soluções</NavLink>
+            <NavLink to="/servicos" className="btn btn-outline">Ver soluções</NavLink>
           </div>
         </div>
       </section>

@@ -137,6 +137,13 @@
   display: flex;
   justify-content: center;
 }
+.autoria__capa img {
+  width: 180px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 44px -18px rgba(0, 27, 45, 0.45);
+}
 .autoria__capa-placeholder {
   width: 180px;
   height: 250px;

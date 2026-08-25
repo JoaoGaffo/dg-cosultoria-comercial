@@ -16,7 +16,7 @@ export default function Footer() {
           <ul>
             <li><NavLink to="/">Início</NavLink></li>
             <li><NavLink to="/metodo-dg">Método DG</NavLink></li>
-            <li><NavLink to="/solucoes">Soluções</NavLink></li>
+            <li><NavLink to="/servicos">Soluções</NavLink></li>
             <li><NavLink to="/livro">Livro</NavLink></li>
             <li><NavLink to="/sobre">Sobre</NavLink></li>
             <li><NavLink to="/contato">Contato</NavLink></li>

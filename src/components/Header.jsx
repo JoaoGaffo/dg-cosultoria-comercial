@@ -6,7 +6,7 @@ import logo from '../assets/images/LogotipoHorizontalRemoveBG.png'
 const NAV_ITEMS = [
   { label: 'Início', to: '/' },
   { label: 'Método DG', to: '/metodo-dg' },
-  { label: 'Soluções', to: '/solucoes' },
+  { label: 'Soluções', to: '/servicos' },
   { label: 'Livro', to: '/livro' },
   { label: 'Sobre', to: '/sobre' },
   { label: 'Contato', to: '/contato' },
