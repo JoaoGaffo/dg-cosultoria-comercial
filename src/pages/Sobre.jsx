@@ -1,21 +1,22 @@
+import { NavLink } from "react-router-dom";
 import "../styles/Sobre.css";
-import DayaneFundoBranco from "../assets/images/DayaneGaffoSentada.png";
+import DayaneImage from "../assets/images/DayaneGaffoSentada.png";
 
 const TRAJETORIA = [
   {
     titulo: "Liderança comercial",
     texto:
-      "Mais de 20 anos de experiência em vendas e gestão estratégica, liderando equipes comerciais de alta performance.",
+      "Mais de 20 anos de experiência em vendas e gestão estratégica, liderando equipes comerciais de alta performance em diferentes segmentos.",
   },
   {
     titulo: "Posições de gestão",
     texto:
-      "Atuou como Comercial Manager, Marketing Manager e Account Manager em diferentes segmentos de mercado, incluindo grandes instituições como a GSS.",
+      "Commercial Manager, Marketing Manager e Account Manager em diferentes segmentos de mercado, incluindo grandes instituições como a GSS.",
   },
   {
     titulo: "Formação de equipes",
     texto:
-      "Ampla experiência na formação, treinamento e gestão de equipes de Closers, SDRs e BDRs, com foco em performance e conversão de vendas.",
+      "Ampla experiência na formação, treinamento e gestão de equipes de Closers, SDRs e BDRs, com foco em performance, relacionamento e conversão.",
   },
   {
     titulo: "Dados e tecnologia",
@@ -27,74 +28,76 @@ const TRAJETORIA = [
 export default function Sobre() {
   return (
     <>
+      {/* ABERTURA */}
       <section className="sobre-hero">
         <div className="container sobre-hero__inner">
           <p className="eyebrow">Sobre</p>
-          <h1>
-            DG - <span className="gold-text">Consultoria Comercial</span>
-          </h1>
+          <h1>Dayane Gaffo</h1>
+          <p className="sobre-hero__cargo">
+            Fundadora do Método DG | Consultora Comercial | Autora
+          </p>
           <p className="sobre-hero__lead">
-            Fundada por Dayane Gaffo, profissional apaixonada pelo universo das
-            vendas e pelo desenvolvimento de pessoas, dedicada à otimização de
-            processos comerciais e à construção de operações de vendas
-            previsíveis e escaláveis.
+            Mais de 20 anos dedicados a vendas, liderança e estruturação
+            comercial transformaram experiência prática em uma metodologia
+            própria para desenvolver profissionais e construir operações
+            comerciais mais estruturadas, profissionais e previsíveis.
           </p>
         </div>
       </section>
 
+      {/* HISTÓRIA */}
       <section className="section section-light sobre-bio">
         <div className="container sobre-bio__grid">
-            <img
-              src={DayaneFundoBranco}
-              className="sobre-bio__logo"
-              alt="Logotipo da Dayane Gaffo Consultoria Comercial"
-            />
+          <div className="sobre-bio__foto">
+            <img src={DayaneImage} alt="Dayane Gaffo" />
+          </div>
           <div className="sobre-bio__text">
-            <h2>Mais de 20 anos estruturando operações comerciais</h2>
+            <h2>
+              Mais de 20 anos entre vendas, pessoas e operações comerciais.
+            </h2>
             <p>
-              Dayane Gaffo é uma profissional com mais de 20 anos de experiência
-              nas áreas comercial, vendas e gestão estratégica, atuando na
-              liderança de equipes de alta performance e no desenvolvimento de
-              operações comerciais voltadas para crescimento e resultados.
+              A trajetória de Dayane Gaffo foi construída dentro da realidade
+              comercial: vendendo, negociando, liderando profissionais, formando
+              equipes e estruturando operações em diferentes segmentos e
+              momentos de negócio.
             </p>
             <p>
-              Ao longo de sua trajetória, ocupou posições de liderança como
-              Comercial Manager, Marketing Manager e Account Manager, acumulando
-              experiência em diferentes segmentos de mercado, incluindo empresas
-              prestadoras de serviços e grandes instituições, como a GSS.
+              Ao longo de mais de duas décadas, ocupou posições como Commercial
+              Manager, Marketing Manager e Account Manager, liderou equipes
+              comerciais de alta performance e atuou tanto em grandes
+              instituições quanto na realidade de pequenas empresas.
             </p>
             <p>
-              Também atuou diretamente na estruturação de operações comerciais
-              em pequenas empresas, desenvolvendo processos de vendas,
-              organizando fluxos comerciais e expandindo equipes por meio da
-              implantação de funções estratégicas como SDR, BDR e Closer. Esse
-              trabalho contribuiu para fortalecer a operação comercial, elevar a
-              performance das equipes, aumentar a eficiência dos processos e
-              impulsionar o crescimento do faturamento de forma estruturada e
-              sustentável.
+              Foi também na prática que acompanhou a evolução das estruturas
+              comerciais, participando da formação e expansão de equipes com
+              profissionais em diferentes funções — SDRs, BDRs, Closers,
+              vendedores e gestores.
             </p>
             <p>
-              Com ampla experiência na formação e liderança de equipes
-              comerciais, acredita que o sucesso de uma operação de vendas
-              depende da combinação entre pessoas bem preparadas, processos
-              sólidos, indicadores confiáveis e gestão estratégica.
+              Essa experiência permitiu observar um problema que se repetia em
+              diferentes empresas: operações dependentes de profissionais
+              talentosos, conhecimento comercial concentrado em poucas pessoas e
+              vendedores obrigados a descobrir, sozinhos, como vender.
             </p>
+            <blockquote className="sobre-bio__quote">
+              "Vender bem não deveria depender de talento. Deveria depender de
+              processo."
+            </blockquote>
             <p>
-              Hoje, por meio da DG Consultoria Comercial, ajuda empresários e
-              gestores a estruturarem seus processos comerciais, desenvolverem
-              equipes de alta performance e construírem operações de vendas
-              organizadas, previsíveis e preparadas para crescer de forma
-              consistente.
+              Foi da união entre experiência prática, gestão, desenvolvimento de
+              pessoas e estruturação comercial que nasceu o Método DG —
+              Arquitetura Comercial.
             </p>
           </div>
         </div>
       </section>
 
+      {/* TRAJETÓRIA */}
       <section className="section trajetoria">
         <div className="container">
           <p className="eyebrow">Trajetória</p>
           <h2 className="trajetoria__title">
-            Experiência prática aliada a dados e tecnologia.
+            Uma trajetória que se transformou em método.
           </h2>
           <div className="trajetoria__grid">
             {TRAJETORIA.map((item) => (
@@ -104,36 +107,92 @@ export default function Sobre() {
               </article>
             ))}
           </div>
+          <div className="trajetoria__metodo-destaque">
+            <div>
+              <p className="eyebrow">Método DG — Arquitetura Comercial</p>
+              <p>
+                A síntese de mais de duas décadas de experiência em vendas,
+                liderança, formação de equipes e estruturação de operações
+                comerciais transformada em uma metodologia própria.
+              </p>
+            </div>
+            <NavLink to="/metodo-dg" className="btn btn-primary">
+              Conheça o Método DG →
+            </NavLink>
+          </div>
         </div>
       </section>
 
-      <section className="section section-light missao">
+      {/* DA EXPERIÊNCIA À AUTORIA */}
+      <section className="section section-light autoria">
+        <div className="container autoria__grid">
+          <div>
+            <p className="eyebrow">Da Experiência à Autoria</p>
+            <h2>
+              Quando conhecimento deixa de ser apenas experiência e passa a ser
+              legado.
+            </h2>
+            <p>
+              O livro DG — Arquitetura Comercial nasce da decisão de organizar,
+              registrar e compartilhar aquilo que foi desenvolvido ao longo de
+              décadas — para que o conhecimento comercial não fique restrito à
+              experiência de poucos, mas possa ser ensinado, aplicado,
+              acompanhado e aperfeiçoado por muitos.
+            </p>
+            <NavLink to="/livro" className="btn btn-primary autoria__cta">
+              Conheça o livro DG — Arquitetura Comercial →
+            </NavLink>
+          </div>
+          <div className="autoria__capa">
+            <div className="autoria__capa-placeholder">
+              <span>DG</span>
+              <p>
+                Arquitetura
+                <br />
+                Comercial
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROPÓSITO / MÉTODO / COMPROMISSO */}
+      <section className="section missao">
         <div className="container missao__grid">
           <div className="missao-card">
-            <h3 className="eyebrow">Missão</h3>
+            <h3 className="eyebrow">Propósito</h3>
             <p>
-              Estruturar processos comerciais sólidos que devolvam
-              previsibilidade, controle e liberdade para empresas e
-              profissionais de vendas.
+              Profissionalizar vendas por meio de processos que possam ser
+              ensinados, aplicados, acompanhados e aperfeiçoados.
             </p>
           </div>
           <div className="missao-card">
-            <h3 className="eyebrow">Como atuamos</h3>
+            <h3 className="eyebrow">Método</h3>
             <p>
-              Cada empresa possui desafios, objetivos e realidades diferentes.
-              Por isso, a consultoria não trabalha com soluções genéricas ou
-              fórmulas prontas — antes de qualquer recomendação, é feito um
-              diagnóstico detalhado da operação.
+              Transformar experiência e estratégia comercial em estruturas
+              claras, respeitando a realidade de cada empresa, profissional,
+              produto, serviço e cliente.
             </p>
           </div>
           <div className="missao-card">
             <h3 className="eyebrow">Compromisso</h3>
             <p>
-              Atendimento próximo, humanizado e consultivo, com soluções sob
-              medida para aumentar a eficiência comercial e promover um
-              crescimento sustentável.
+              Defender uma venda profissional, consultiva e humana — com
+              técnica, processo e responsabilidade, sem depender de fórmulas
+              prontas ou abordagens artificiais.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* MANIFESTO */}
+      <section className="manifesto-sobre">
+        <div className="container">
+          <blockquote>
+            "Hoje, vendedores deixam de nascer vendedores
+            <br />e passam a <strong>se formar</strong> vendedores."
+          </blockquote>
+          <cite>Dayane Gaffo — Fundadora do Método DG</cite>
         </div>
       </section>
     </>

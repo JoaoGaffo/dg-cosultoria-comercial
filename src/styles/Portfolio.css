@@ -1,15 +1,17 @@
 .portfolio-hero {
   padding: 9.5rem 0 4rem;
-  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-black) 140%);
+  background: linear-gradient(
+    180deg,
+    var(--color-navy) 0%,
+    var(--color-black) 140%
+  );
 }
-
 .portfolio-hero h1 {
   font-size: clamp(2rem, 3.8vw, 2.8rem);
   max-width: 740px;
   margin: 1rem 0 1.2rem;
   line-height: 1.25;
 }
-
 .portfolio-hero__lead {
   max-width: 600px;
   color: var(--color-text-soft);
@@ -21,48 +23,55 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem;
 }
-
 .case-card {
   background: var(--color-white);
   border-radius: var(--radius-md);
   padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
-
 .case-card .eyebrow {
-  display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
-
-.case-card h3 {
-  font-family: var(--font-body);
+.case-card__item h3 {
+  font-size: 0.76rem;
   font-weight: 700;
-  font-size: 0.88rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-navy);
-  margin: 1rem 0 0.4rem;
+  letter-spacing: 0.06em;
+  color: rgba(0, 27, 45, 0.5);
+  margin-bottom: 0.35rem;
 }
-
-.case-card p {
-  font-size: 0.92rem;
+.case-card__item p {
+  font-size: 0.9rem;
   color: rgba(0, 27, 45, 0.75);
 }
-
-.concorrencia__inner {
-  max-width: 760px;
+.case-card__resultado {
+  background: rgba(0, 27, 45, 0.04);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+}
+.case-card__resultado h3 {
+  color: var(--color-gold);
+}
+.case-card__resultado p {
+  font-weight: 600;
+  color: var(--color-navy);
 }
 
-.concorrencia__inner h2 {
+.diferencial__inner {
+  max-width: 720px;
+}
+.diferencial__inner h2 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  margin: 1rem 0 1.4rem;
+  margin: 1rem 0 1.2rem;
 }
-
-.concorrencia__inner p {
+.diferencial__inner p {
   color: var(--color-text-soft);
   margin-bottom: 2rem;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 860px) {
   .cases__grid {
     grid-template-columns: 1fr;
   }
