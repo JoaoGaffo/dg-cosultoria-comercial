@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../styles/Sobre.css";
-import DayaneImage from "../assets/images/DayaneGaffoSentada.png";
+import DayaneImage from "../assets/images/dayane-rosto.jpeg";
 import livroCapa from "../assets/images/capa-livro.png";
 
 const TRAJETORIA = [

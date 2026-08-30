@@ -48,7 +48,6 @@ export default function MetodoDG() {
               </ul>
             </div>
             <div className="porque__conclusao">
-              <p>O Método DG nasce para mudar essa lógica.</p>
               <blockquote>"Antes de cobrar resultado, é preciso construir a arquitetura capaz de produzi-lo."</blockquote>
             </div>
           </div>
