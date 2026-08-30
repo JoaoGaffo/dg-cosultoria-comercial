@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import "../styles/Livro.css";
 import livroCapa from "../assets/images/capa-livro.png";
 
@@ -53,6 +52,39 @@ const CAPITULOS = [
   },
 ];
 
+const APLICACOES = [
+  {
+    step: "01",
+    tag: "APRENDA",
+    icon: "menu_book",
+    titulo: "O Método DG — Arquitetura Comercial",
+    desc: "Fundamentos, filosofia e metodologia para aprender a pensar sobre vendas e construir operações comerciais mais estruturadas.",
+    btnLabel: "QUERO O LIVRO",
+    link: "https://go.hotmart.com/K107353301D?dp=1",
+    destaque: true,
+  },
+  {
+    step: "02",
+    tag: "APLIQUE",
+    icon: "draw",
+    titulo: "Playbook Método DG",
+    desc: "Leve o método para a prática com etapas, perguntas estratégicas, frameworks, objeções, simulações e ferramentas para a rotina comercial.",
+    btnLabel: "CONHECER O PLAYBOOK",
+    link: "https://go.hotmart.com/S107373998U?dp=1",
+    destaque: false,
+  },
+  {
+    step: "03",
+    tag: "CONSTRUA",
+    icon: "engineering",
+    titulo: "Blueprint Método DG",
+    desc: "Uma ferramenta prática para construir seu próprio script e processo comercial, considerando seu cliente, sua solução e sua realidade.",
+    btnLabel: "CONHECER O BLUEPRINT",
+    link: "https://go.hotmart.com/B107374536R?dp=1",
+    destaque: false,
+  },
+];
+
 export default function Livro() {
   return (
     <>
@@ -72,36 +104,35 @@ export default function Livro() {
               Foi a forma de enxergar.
             </p>
             <a
-              href="https://wa.me/+5513996805974?text=Ol%C3%A1%2C%20Dayane!%20Tenho%20interesse%20em%20adquirir%20o%20livro%20DG%20%E2%80%94%20Arquitetura%20Comercial."
-              target="_blank"
+              href="https://go.hotmart.com/K107353301D?dp=1"
               rel="noreferrer"
               className="btn btn-primary livro-hero__cta"
             >
-              <svg
-                viewBox="0 0 32 32"
-                width="18"
-                height="18"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.5 1.8 6.4L4 29l7.8-1.8c1.9 1 4 1.6 6.2 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm6 16.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1-.5-1.7-1-2.4-1.9-.5-.6-.1-.9.2-1.2.3-.3.5-.5.7-.8.1-.2.1-.4 0-.6-.1-.2-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.1s.9 2.5 1.1 2.7c.2.2 1.7 2.6 4.1 3.5 2 .8 2.4.6 2.8.6.5 0 1.5-.6 1.7-1.1.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.4z" />
-              </svg>
-              Quero meu exemplar
+              Quero meu exemplar  →
             </a>
           </div>
           <div className="livro-hero__cover">
-            <img src={livroCapa} alt="Capa do livro DG — Arquitetura Comercial" />
+            <img
+              src={livroCapa}
+              alt="Capa do livro DG — Arquitetura Comercial"
+              onError={(e) => {
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "flex";
+              }}
+            />
+            <div
+              className="livro-cover-placeholder"
+              style={{ display: "none" }}
+            >
+              <span>DG</span>
+              <p>
+                Arquitetura
+                <br />
+                Comercial
+              </p>
+              <small>Dayane Gaffo</small>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* ÂNCORA */}
-      <section className="livro-ancora">
-        <div className="container">
-          <blockquote>
-            "Vender bem não é talento. É processo."
-            <cite>— Dayane Gaffo</cite>
-          </blockquote>
         </div>
       </section>
 
@@ -202,7 +233,7 @@ export default function Livro() {
       </section>
 
       {/* CTA / COMPRAR */}
-      <section className="section section-light livro-comprar">
+      <section className="section section-light livro-comprar" id="comprar">
         <div className="container livro-comprar__inner">
           <div>
             <p className="eyebrow">Adquira o livro</p>
@@ -218,28 +249,30 @@ export default function Livro() {
               <li>Atendimento direto pelo WhatsApp</li>
             </ul>
             <a
-              href="https://wa.me/+5513996805974?text=Ol%C3%A1%2C%20Dayane!%20Tenho%20interesse%20em%20adquirir%20o%20livro%20DG%20%E2%80%94%20Arquitetura%20Comercial."
+              href="https://go.hotmart.com/K107353301D?dp=1"
               target="_blank"
               rel="noreferrer"
               className="btn btn-primary livro-comprar__btn"
             >
-              <svg
-                viewBox="0 0 32 32"
-                width="18"
-                height="18"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.5 1.8 6.4L4 29l7.8-1.8c1.9 1 4 1.6 6.2 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm6 16.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1-.5-1.7-1-2.4-1.9-.5-.6-.1-.9.2-1.2.3-.3.5-.5.7-.8.1-.2.1-.4 0-.6-.1-.2-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.1s.9 2.5 1.1 2.7c.2.2 1.7 2.6 4.1 3.5 2 .8 2.4.6 2.8.6.5 0 1.5-.6 1.7-1.1.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.4z" />
-              </svg>
-              Quero meu exemplar
+              Quero meu exemplar  →
             </a>
             <p className="livro-comprar__hotmart">
               Em breve disponível também na Hotmart.
             </p>
           </div>
           <div className="livro-comprar__cover">
-            <div className="livro-cover-placeholder livro-cover-placeholder--sm">
+            <img
+              src={livroCapa}
+              alt="Capa do livro DG — Arquitetura Comercial"
+              onError={(e) => {
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "flex";
+              }}
+            />
+            <div
+              className="livro-cover-placeholder livro-cover-placeholder--sm"
+              style={{ display: "none" }}
+            >
               <span>DG</span>
               <p>
                 Arquitetura
@@ -247,6 +280,44 @@ export default function Livro() {
                 Comercial
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* ECOSSISTEMA */}
+      <section className="livro-ancora">
+        <div className="container">
+          <p className="livro-ancora__subtitulo">O ecossistema do Método DG</p>
+          <div className="aplicacoes__grid">
+            {APLICACOES.map((item) => (
+              <article
+                className={`aplicacao-card ${item.destaque ? "aplicacao-card--destaque" : ""}`}
+                key={item.icon}
+              >
+                <div className="aplicacao-card__top">
+                  <span className="aplicacao-card__step">{item.step}</span>
+                  <span className="aplicacao-card__tag">{item.tag}</span>
+                </div>
+
+                <span
+                  className="material-symbols-outlined aplicacao-card__icon"
+                  aria-hidden="true"
+                >
+                  {item.icon}
+                </span>
+
+                <h3 className="aplicacao-card__titulo">{item.titulo}</h3>
+                <p className="aplicacao-card__desc">{item.desc}</p>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`aplicacao-card__btn ${item.destaque ? "aplicacao-card__btn--gold" : "aplicacao-card__btn--outline"}`}
+                >
+                  {item.btnLabel}
+                </a>
+              </article>
+            ))}
           </div>
         </div>
       </section>
